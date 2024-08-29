@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
+:root {
+  --primary-color: rgb(86, 0, 86);
+  --secondary-color: yellow;
+  --hover-color: #FFD700;
+  --dropdown-bg: #f9f9f9;
+  --dropdown-hover-bg: #f1f1f1;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 69px;
   padding: 0 2rem;
-  background-color: rgb(86, 0, 86);
+  background-color: var(--primary-color);
   font-family: 'Montserrat', sans-serif;
+  position: relative;
+  z-index: 1000;
 }
 
 .navbar-logo img {
@@ -22,14 +32,16 @@
 .navbar-links a {
   margin-left: 1.5rem;
   text-decoration: none;
-  color: yellow;
+  color: var(--secondary-color);
   transition: color 0.3s ease;
   font-weight: 300;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-links a:hover {
-  color: #FFD700;
+  color: var(--hover-color);
 }
 
 .dropdown {
@@ -40,25 +52,32 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: var(--primary-color);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
+  color: var(--secondary-color);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  margin: 0;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+.dropdown-icon {
+  margin-left: 5px;
 }
 
 .navbar-burger {
@@ -70,54 +89,46 @@
 .navbar-burger div {
   width: 25px;
   height: 3px;
-  background-color: yellow;
+  background-color: var(--secondary-color);
   margin: 3px 0;
   transition: all 0.3s ease;
-}
-
-.footer {
-  background-color: rgb(86, 0, 86);
-  color: yellow;
-  padding: 1rem 2rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.contact-info p {
-  margin: 0.5rem 0;
 }
 
 @media (max-width: 768px) {
   .navbar-links {
     position: absolute;
-    top: 80px;
+    top: 69px;
     left: 0;
     flex-direction: column;
-    background-color: rgb(86, 0, 86);
+    background-color: var(--primary-color);
     width: 100%;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
     display: none;
   }
 
   .navbar-links.active {
-    transform: translateY(0%);
     display: flex;
   }
 
   .navbar-links a {
-    text-align: center;
-    padding: 1rem 0;
+    text-align: left;
+    padding: 1rem 2rem;
+    margin: 0;
   }
 
   .navbar-burger {
     display: flex;
+  }
+
+  .navbar-burger.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .navbar-burger.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-burger.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 
   .dropdown-content {
@@ -134,8 +145,7 @@
     display: block;
   }
 
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
+  .dropdown-content a {
+    padding-left: 3rem;
   }
 }
