@@ -1,16 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import SeasonCard from '../../components/SeasonCard';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 
 export default function ChooseLadiesSeason() {
-  const seasons = ['Summer', 'Winter', 'Autumn', 'Rainy'];
+  const seasons = ['Summer', 'Winter', 'Autumn', 'Spring'];
 
   return (
-    <ul>
+    <>
+    <Header/>
+    <ul style={{ listStyleType: 'none', padding: 0 }}>
       {seasons.map((season, index) => (
-        <li key={index}>
-          <Link to={`/ladies?season=${season.toLowerCase()}`}>{season}</Link>
+          <li key={index} style={{ marginBottom: '5px' }}>
+          <SeasonCard season={season} baseUrl="/ladies" />
         </li>
       ))}
     </ul>
+    <Footer/>
+    </>
   );
 }

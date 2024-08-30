@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import '../styles/header.css';
-import logo from '../../public/assets/01.png';
+import logo from '/assets/01.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,13 +58,17 @@ const Header = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={logo} alt="Logo" />
+        {/* Link the logo to the homepage */}
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
       </div>
       <div className={`navbar-links ${isOpen ? 'active' : ''}`} ref={dropdownRef}>
         {navItems.map((item, index) => (
           <div key={index} className={`dropdown ${activeDropdown === index ? 'active' : ''}`}>
+            {/* Disable the click on the parent item if it has dropdown items */}
             <a 
-              href={item.href}
+              href={item.dropdownItems ? '#' : item.href}
               onClick={(e) => item.dropdownItems && toggleDropdown(index, e)}
             >
               {item.name}

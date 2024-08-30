@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../styles/slider.css';
 
 // Import images at the top
-import img1 from '../../public/assets/pic1.jpg';
-import img2 from '../../public/assets/pic2.jpg';
-import img3 from '../../public/assets/pic3.jpg';
+import img1 from '/assets/pic1.jpg';
+import img2 from '/assets/pic2.jpg';
+import img3 from '/assets/pic3.jpg';
 
 // Define the slides array with image and text
 const slides = [
