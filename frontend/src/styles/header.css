@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
-  --primary-color: rgb(86, 0, 86);
-  --secondary-color: yellow;
-  --hover-color: #FFD700;
+  --primary-color: #101010;
+  --secondary-color: #d3be6b;
+  --hover-color: #ffffff;
   --dropdown-bg: #f9f9f9;
   --dropdown-hover-bg: #f1f1f1;
 }
@@ -12,17 +12,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 69px;
+  height: 108px; /* Updated height */
   padding: 0 2rem;
   background-color: var(--primary-color);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   position: relative;
   z-index: 1000;
 }
 
 .navbar-logo img {
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 158px;
 }
 
 .navbar-links {
@@ -67,7 +67,7 @@
 }
 
 .dropdown-content a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #ffffff1a;
 }
 
 @media (min-width: 769px) {
@@ -97,7 +97,7 @@
 @media (max-width: 768px) {
   .navbar-links {
     position: absolute;
-    top: 69px;
+    top: 100px; /* Adjusted to match the new height */
     left: 0;
     flex-direction: column;
     background-color: var(--primary-color);

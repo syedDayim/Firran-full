@@ -19,6 +19,9 @@ const Footer = () => {
         </a>
       </div>
       <div className="company-name">
+        9541555555 | support@firran.com
+      </div>
+      <div className="company-name">
         Firran LLC
       </div>
     </footer>

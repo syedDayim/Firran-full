@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import '../styles/header.css';
+import logo from '../../public/assets/01.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +53,7 @@ const Header = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="https://via.placeholder.com/100x100.png?text=Logo" alt="Logo" />
+        <img src={logo} alt="Logo" />
       </div>
       <div className={`navbar-links ${isOpen ? 'active' : ''}`} ref={dropdownRef}>
         {navItems.map((item, index) => (
