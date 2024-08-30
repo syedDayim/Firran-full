@@ -104,6 +104,16 @@
     width: 100%;
     display: none;
   }
+  .navbar-logo img {
+    height: 70px;
+    width: 100px;
+  }
+  .navbar {
+    height: 70px; /* Updated height */
+  }
+  .navbar-links {
+    top: 70px;
+  }
 
   .navbar-links.active {
     display: flex;

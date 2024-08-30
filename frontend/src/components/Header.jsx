@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import '../styles/header.css';
 import logo from '../../public/assets/01.png';
@@ -45,7 +46,11 @@ const Header = () => {
 
   const navItems = [
     { name: 'About', href: '#about', dropdownItems: ['About 1', 'About 2', 'About 3', 'About 4', 'About 5'] },
-    { name: 'Firran Collections', href: '#collections', dropdownItems: ['Collection 1', 'Collection 2'] },
+    { 
+      name: 'Firran Collections', 
+      href: '#collections', 
+      dropdownItems: ['Ladies', 'Gents'] 
+    },
     { name: 'Firran Events', href: '#events' },
     { name: 'Firran Designs', href: '#designs' }
   ];
@@ -70,7 +75,13 @@ const Header = () => {
             {item.dropdownItems && (
               <div className={`dropdown-content ${activeDropdown === index ? 'active' : ''}`}>
                 {item.dropdownItems.map((subItem, subIndex) => (
-                  <a key={subIndex} href={`${item.href}-${subIndex + 1}`}>{subItem}</a>
+                  subItem === 'Ladies' ? (
+                    <Link key={subIndex} to="/collections-ladies">{subItem}</Link>
+                  ) : subItem === 'Gents' ? (
+                    <Link key={subIndex} to="/collections-gents">{subItem}</Link>
+                  ) : (
+                    <a key={subIndex} href={`${item.href}-${subIndex + 1}`}>{subItem}</a>
+                  )
                 ))}
               </div>
             )}
