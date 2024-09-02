@@ -6,6 +6,7 @@ import Ladies from './pages/firran-collections/Ladies';
 import Home from './pages/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
 function App() {
   return (
     <>
@@ -16,7 +17,6 @@ function App() {
         <Route path="/collections-gents" element={<ChooseGentsSeason />} />
         <Route path='/ladies' element={<Ladies/>}/>
         <Route path='/gents' element={<Gents/>}/>
-        
       </Routes>
     </Router>
     </>
