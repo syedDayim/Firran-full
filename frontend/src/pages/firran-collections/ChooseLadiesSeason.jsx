@@ -29,7 +29,7 @@ export default function ChooseLadiesSeason() {
             <li key={index} style={{ marginBottom: '15px' }}>
               <div className="card-container">
                 <a
-                  href={`/gents?season=${season.name.toLowerCase()}`}
+                  href={`/ladies?season=${season.name.toLowerCase()}`}
                   className="card"
                   style={{ backgroundImage: `url(${season.image})` }}
                 >

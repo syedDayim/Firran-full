@@ -1,0 +1,22 @@
+/* noProduct.css */
+.no-product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+  }
+  
+  .no-product-image {
+    max-width: 600px; /* Larger image */
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .no-product-text {
+    font-size: 1.5rem;
+    color: #666;
+  }
+  
